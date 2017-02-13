@@ -36,9 +36,9 @@ app.send = function (message) {
   // here we need to somehow validate message is a string and not code.
     //throw error if it is not a string
 
-    
+
   $.ajax(
-    {url: 'http://parse.atx.hackreactor.com/chatterbox/classes/messages',
+    {url: 'http://parse.atx.hackreactor.com',
      type: 'POST', 
      data: JSON.stringify(message),
      contentType: 'application/json',
@@ -49,5 +49,33 @@ app.send = function (message) {
        console.error('chatterbox: Failed to send message', data);
      }
    });
-  //somehow send message
 };
+
+app.fetch = function () {
+  $.ajax({});
+};
+
+app.clearMessages = function () {
+  $('#chats').empty();
+};
+
+app.renderMessage = function (message) {
+  $('#chats').append('<div class = ' + JSON.stringify(message.username) + '>' + JSON.stringify(message.username) + ' :   ' + JSON.stringify(message.text) + '</div>');
+};
+
+app.renderRoom = function (room) {
+  $('#roomSelect').append('<div>' + JSON.stringify(room) + '</div>');
+};
+
+app.handleUsernameClick = function () {
+
+};
+
+
+
+
+
+
+
+
+
