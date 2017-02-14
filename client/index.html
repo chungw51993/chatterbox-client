@@ -25,8 +25,23 @@
   <body>
     <div id="main">
       <h1>chatterbox</h1>
+      <form action="#" id="send" method="post">
+        <input type="text" id='currentMessage' placeholder="Enter your message here">
+        <input class="submit" type="submit" name="submit">
+      </form>
+      <div id="rooms">
+      <span class = 'currentRoom'>Current Room:</span>
+        <select id="roomSelect">
+        </select>
+      </div>
       <!-- Your HTML goes here! -->
     </div>
     <div id="chats"></div>
+    <script>
+      $(function() {
+        app.init();
+      });
+    </script>
+    </div>
   </body>
 </html>
